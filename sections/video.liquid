@@ -1,0 +1,216 @@
+{% include 'include-video' %}
+
+{% schema %}
+{
+  "name": "Video",
+  "class": "video-section under-menu",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "16:9",
+          "label": "16:9"
+        },
+        {
+          "value": "4:3",
+          "label": "4:3"
+        }
+      ],
+      "default": "16:9"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay video",
+      "default": false,
+      "info": "Limited browser support for autoplaying video [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/360000661568-Why-won-t-my-video-autoplay-)"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoloop",
+      "label": "Autoloop video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mute_video",
+      "label": "Mute video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show video controls",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_dark_overlay",
+      "label": "Darken video",
+      "default": false
+    },
+    {
+      "type": "video_url",
+      "id": "iframe_video",
+      "label": "Video link",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "html5_video",
+      "label": "HTML5 MP4/OGV File URL"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 x 900px recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_text_over_video",
+      "label": "Show text when video is playing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "homepage_arrow",
+      "label": "Show scroll down arrow",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "headline_animation",
+      "label": "Heading text animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "animate_in",
+          "label": "Fade In"
+        },
+        {
+          "value": "animate_up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "animate_down",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "animate_down"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your headline here"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Text",
+      "default": "<p>This is a short subheading for your banner image</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Play video"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Parallax"
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax_effect",
+      "label": "Enable parallax scrolling",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "parallax_image_height",
+      "label": "Parallax section height",
+      "min": 300,
+      "max": 1000,
+      "step": 20,
+      "default": 600,
+      "unit": "px"
+    }
+  ],
+  "presets": [{
+    "name": "Video",
+    "category": "Video",
+    "settings": {
+      "iframe_video": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    }
+  }]
+}
+
+{% endschema %}

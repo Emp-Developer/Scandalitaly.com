@@ -1,0 +1,48 @@
+{% comment %}
+  ---
+  Documentation: https://meteor.heliumdev.com/help
+  The following snippet serves as data for the Meteor Mega Menu app.
+  YOU SHOULD NOT BE EDITING THIS FILE.
+  ANY CHANGES WILL BE OVERWRITTEN UPON SAVE!
+  ---
+{% endcomment %}
+
+{% capture data %}
+  {
+    "settings": {"app_proxy":"apps/meteor","z_index":9999,"mobile_breakpoint":"","disable_at_width":"","max_generations":4,"vertical_offset":0,"mobile_vertical_offset":0,"css":"","external_fetch":false},
+    "theme": {
+      "name": "Parallax",
+      "version": "3.1.5"
+    },
+    "linklists": {
+      "main-menu": {
+        "links": [
+          {% for link in linklists["main-menu"].links %}
+            {
+              "title": {{ link.title | json }},
+              "url": {{ link.url | json }},
+              "object_id": {{ link.object.id | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    },
+    "menus":
+    [
+      {
+        "id": 810,
+        "title": "Shop",
+        "list_handle": "main-menu",
+        "object_path": "/collections/new-arrivals",
+        "template": "riviera",
+        "object_id": "30271275043",
+        "settings": {"action":"hover","height":"auto","animation":"zoom","image_size_sub":"fit","image_size_top":"fit","color_left_text":"0,0,0,1","color_background":"255,255,255,0.92","color_left_hover":"255,255,255,1","color_right_text":"0,0,0,1","color_mobile_text":"122,122,122,1","vertical_alignment":"middle","color_left_background":"255,255,255,0.87","color_left_hover_text":"149,210,177,1","color_mobile_background":"255,255,255,0.36"},
+        "handle": null,
+        "manual_attach": false,
+        "links": [{% include 'meteor-menu', meteor_links: linklists["menu2"].links, meteor_level: 1 %}]
+      }
+    ]
+  }
+{% endcapture %}
+
+{{ data | strip_newlines }}
